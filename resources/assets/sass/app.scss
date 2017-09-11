@@ -1,9 +1,18 @@
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import "node_modules/font-awesome/scss/font-awesome.scss";
 // Variables
 @import "variables";
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+.navbar {
+  margin:10px 40px 28px 40px;
+}
+.navbar-default .navbar-brand {
+  color: #000;
+  font-size: 2em;
+  margin-top: 5px;
+}
