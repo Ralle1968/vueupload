@@ -3406,7 +3406,7 @@ var Component = __webpack_require__(3)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\Users\\FES\\www\\sites\\vueupload\\resources\\assets\\js\\components\\Show.vue"
+Component.options.__file = "C:\\Users\\graefr\\www\\sites\\vueupload\\resources\\assets\\js\\components\\Show.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Show.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -3450,7 +3450,7 @@ var Component = __webpack_require__(3)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\Users\\FES\\www\\sites\\vueupload\\resources\\assets\\js\\components\\FileUpload.vue"
+Component.options.__file = "C:\\Users\\graefr\\www\\sites\\vueupload\\resources\\assets\\js\\components\\FileUpload.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] FileUpload.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -4022,6 +4022,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -4031,25 +4033,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
-        //     onFileChange(e) {
-        //         let files = e.target.files || e.dataTransfer.files;
-        //         if (!files.length)
-        //             return;
-        //         this.createImage(files[0]);
-        //     },
-        //     createImage(file) {
-        //         let reader = new FileReader();
-        //         let vm = this;
-        //         reader.onload = (e) => {
-        //             vm.image = e.target.result;
-        //         };
-        //         reader.readAsDataURL(file);
-        //     },
+        onFileChange: function onFileChange(e) {
+            var files = e.target.files || e.dataTransfer.files;
+            if (!files.length) return;
+            this.createImage(files[0]);
+        },
+        createImage: function createImage(file) {
+            var reader = new FileReader();
+            var vm = this;
+            reader.onload = function (e) {
+                vm.image = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
         //     upload(){
         //         axios.post('/api/upload',{image: this.image}).then(response => {
         //
         //         });
         //     }
+
     }
 });
 
@@ -4059,6 +4061,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-md-12"
@@ -4074,7 +4078,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('input', {
     staticClass: "form-control",
     attrs: {
-      "type": "file"
+      "type": "file",
+      "multiple": ""
     },
     on: {
       "change": _vm.onFileChange
@@ -4086,7 +4091,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.upload
     }
-  }, [_vm._v("Upload")])])])])
+  }, [_vm._v("Upload")])])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -45097,7 +45102,7 @@ var Component = __webpack_require__(3)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\Users\\FES\\www\\sites\\vueupload\\resources\\assets\\js\\components\\Navigation.vue"
+Component.options.__file = "C:\\Users\\graefr\\www\\sites\\vueupload\\resources\\assets\\js\\components\\Navigation.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Navigation.vue: functional components are not supported with templates, they should use render functions.")}
 
