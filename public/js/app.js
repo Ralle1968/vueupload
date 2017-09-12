@@ -3406,7 +3406,7 @@ var Component = __webpack_require__(3)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\Users\\graefr\\www\\sites\\vueupload\\resources\\assets\\js\\components\\Show.vue"
+Component.options.__file = "C:\\Users\\FES\\www\\sites\\vueupload\\resources\\assets\\js\\components\\Show.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Show.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -3450,7 +3450,7 @@ var Component = __webpack_require__(3)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\Users\\graefr\\www\\sites\\vueupload\\resources\\assets\\js\\components\\FileUpload.vue"
+Component.options.__file = "C:\\Users\\FES\\www\\sites\\vueupload\\resources\\assets\\js\\components\\FileUpload.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] FileUpload.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -3991,7 +3991,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\nimg[data-v-0bd6cc0c]{\n    max-height: 36px;\n}\n", ""]);
+exports.push([module.i, "\nimg[data-v-0bd6cc0c]{\n    max-height: 16em;\n}\nli[data-v-0bd6cc0c] {\n  list-style-type: none;\n}\n", ""]);
 
 // exports
 
@@ -4024,11 +4024,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            image: ''
+            images: []
         };
     },
 
@@ -4036,22 +4042,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         onFileChange: function onFileChange(e) {
             var files = e.target.files || e.dataTransfer.files;
             if (!files.length) return;
-            this.createImage(files[0]);
+            for (var i = 0; i < files.length; i++) {
+                this.createImage(files[i]);
+            };
         },
         createImage: function createImage(file) {
             var reader = new FileReader();
             var vm = this;
             reader.onload = function (e) {
-                vm.image = e.target.result;
+                vm.images.push(e.target.result);
             };
             reader.readAsDataURL(file);
+        },
+        upload: function upload() {
+            console.log("Uploaded!!");
+            // axios.post('/api/upload',{image: this.image}).then(response => {
+            //
+            // });
         }
-        //     upload(){
-        //         axios.post('/api/upload',{image: this.image}).then(response => {
-        //
-        //         });
-        //     }
-
     }
 });
 
@@ -4068,12 +4076,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "col-md-12"
   }, [_c('div', {
     staticClass: "col-md-2"
-  }, [_c('img', {
-    staticClass: "img-responsive",
-    attrs: {
-      "src": _vm.image
-    }
-  })]), _vm._v(" "), _c('div', {
+  }, [_c('h2', [_vm._v("Images:")]), _vm._v(" "), _vm._l((_vm.images), function(image) {
+    return _c('li', [_c('img', {
+      staticClass: "img-responsive",
+      attrs: {
+        "src": image
+      }
+    })])
+  })], 2), _vm._v(" "), _c('div', {
     staticClass: "col-md-8"
   }, [_c('input', {
     staticClass: "form-control",
@@ -45102,7 +45112,7 @@ var Component = __webpack_require__(3)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\Users\\graefr\\www\\sites\\vueupload\\resources\\assets\\js\\components\\Navigation.vue"
+Component.options.__file = "C:\\Users\\FES\\www\\sites\\vueupload\\resources\\assets\\js\\components\\Navigation.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Navigation.vue: functional components are not supported with templates, they should use render functions.")}
 
